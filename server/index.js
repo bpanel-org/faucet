@@ -1,11 +1,7 @@
-const endpoints = [
-  {
-    method: 'GET',
-    path: '/faucet',
-    handler: (req, res) => res.status(200).json({ result: 'FOOOO BAARRR' })
-  }
-];
+'use strict';
 
-module.exports = {
-  endpoints
-};
+/**
+ * @module faucet-server
+ */
+
+exports.endpoints = require('./endpoints');
