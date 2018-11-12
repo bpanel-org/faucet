@@ -7,13 +7,16 @@ function getFaucetPath(clientId, walletId) {
 const apiLimiter = rateLimit({
   windowMs: 1 * 60 * 1000, // 15 minutes
   max: 1,
-  statusCode: 429,
-  message: {
-    error: {
-      code: 429,
-      message:
-        'There have been too many faucet requests. Please wait a little while and try again.'
-    }
+  handler: (req, res, next) => {
+    if (!req.config.bool('faucet-admin', false))
+      res.status(429).json({
+        error: {
+          code: 429,
+          message:
+            'There have been too many faucet requests. Please wait a little while and try again.'
+        }
+      });
+    else next();
   }
 });
 
