@@ -5,7 +5,7 @@ function getFaucetPath(clientId, walletId) {
 }
 
 const apiLimiter = rateLimit({
-  windowMs: 1 * 60 * 1000, // 15 minutes
+  windowMs: 60 * 60 * 1000, // 15 minutes
   max: 1,
   handler: (req, res, next) => {
     if (!req.config.bool('faucet-admin', false))
