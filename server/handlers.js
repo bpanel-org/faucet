@@ -43,6 +43,8 @@ function requestFunds(req, res, next) {
     logger,
     params: { client }
   } = req;
+  // get random value between 2000-10000 doos
+  const value = Math.floor(Math.random() * 4000) + 1000;
   const faucetWallet = config.str('faucet-id', 'faucet');
   logger.info(
     'Sending faucet request to client "%s" and wallet "%s"',
@@ -53,7 +55,7 @@ function requestFunds(req, res, next) {
     outputs: [
       {
         address: req.body.address,
-        value: 1000
+        value
       }
     ],
     rate: req.body.rate
