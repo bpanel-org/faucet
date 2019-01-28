@@ -77,8 +77,8 @@ function getFaucetInfo(req, res, next) {
 }
 
 module.exports = {
-  requestFunds,
   apiLimiter,
   blacklistWallets,
-  getFaucetInfo
+  getFaucetInfo,
+  requestFunds
 };
