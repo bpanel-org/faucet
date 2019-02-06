@@ -58,7 +58,8 @@ function requestFunds(req, res, next) {
         value
       }
     ],
-    rate: req.body.rate
+    rate: req.body.rate,
+    passphrase: config.str('faucet-passphrase', '')
   };
   req.body = options;
   req.url = `${getFaucetPath(client, faucetWallet)}/send`;
@@ -76,8 +77,8 @@ function getFaucetInfo(req, res, next) {
 }
 
 module.exports = {
-  requestFunds,
   apiLimiter,
   blacklistWallets,
-  getFaucetInfo
+  getFaucetInfo,
+  requestFunds
 };

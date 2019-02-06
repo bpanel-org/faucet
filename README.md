@@ -48,6 +48,10 @@ Another useful configuration is `faucet-id` which lets you set a custom wallet i
 For example, if you're using a dedicated node for your faucet, you might just want to use your `primary`
 wallet since that is the default wallet created by a bcoin, bcash, or hsd node.
 
+#### Faucet Passphrase
+If your faucet wallet has a passphrase set (highly recommended), you can set it for your client with the
+`faucet-passphrase` config.
+
 ### Setting configs
 The bPanel Faucet plugin uses the bPanel configuration system, built with
 [bcfg](https://github.com/bcoin-org/bcfg). These can be set at runtime (i.e. `npm run start -- --faucet-admin=true --faucet-id=foobar`), in your bpanel's `config.js` file or with an environment variable
