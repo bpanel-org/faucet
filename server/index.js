@@ -4,4 +4,4 @@
  * @module faucet-server
  */
 
-exports.endpoints = require('./endpoints');
+exports.beforeCoreMiddleware = require('./endpoints');
