@@ -43,8 +43,8 @@ function requestFunds(req, res, next) {
     logger,
     params: { client }
   } = req;
-  // get random value between 200000-1000000 of base
-  const value = Math.floor(Math.random() * 400000) + 100000;
+  // get random value between 2000000-10000000 of base
+  const value = Math.floor(Math.random() * 4000000) + 1000000;
   const faucetWallet = config.str('faucet-id', 'faucet');
   logger.info(
     'Sending faucet request to client "%s" and wallet "%s"',
