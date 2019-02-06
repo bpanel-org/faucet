@@ -1,6 +1,6 @@
 {
   "name": "@bpanel/faucet",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A plugin for adding a faucet interface for your bPanel instance, includes rate limiting for the API requests",
   "main": "dist/index.js",
   "scripts": {
